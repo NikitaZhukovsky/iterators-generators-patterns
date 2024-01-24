@@ -15,28 +15,40 @@ class Calculator:
 class Addition:
     @staticmethod
     def execute(first_number, second_number):
-        return first_number + second_number
+        if isinstance(first_number, (int, float)) and isinstance(second_number, (int, float)):
+            return first_number * second_number
+        else:
+            print("Неверный ввод")
 
 
 class Subtraction:
     @staticmethod
     def execute(first_number, second_number):
-        return first_number - second_number
+        if isinstance(first_number, (int, float)) and isinstance(second_number, (int, float)):
+            return first_number * second_number
+        else:
+            print("Неверный ввод")
 
 
 class Multiplication:
     @staticmethod
     def execute(first_number, second_number):
-        return first_number * second_number
+        if isinstance(first_number, (int, float)) and isinstance(second_number, (int, float)):
+            return first_number * second_number
+        else:
+            print("Неверный ввод")
 
 
 class Division:
     @staticmethod
     def execute(first_number, second_number):
-        if second_number != 0:
-            return first_number / second_number
+        if isinstance(first_number, (int, float)) and isinstance(second_number, (int, float)):
+            if second_number != 0:
+                return first_number / second_number
+            else:
+                raise ZeroDivisionError("Деление на 0!")
         else:
-            raise ZeroDivisionError("Деление на 0!")
+            print("Неверный ввод")
 
 
 calculator = Calculator()
