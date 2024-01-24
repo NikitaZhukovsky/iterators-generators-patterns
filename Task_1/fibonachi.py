@@ -1,18 +1,18 @@
-def fibonacci(n):
-    a, b = 0, 1
-    while a < n:
-        yield a
-        a, b = b, a + b
+def fibonacci(count):
+    first_number, second_number = 0, 1
+    for _ in range(count):
+        yield first_number
+        first_number, second_number = second_number, first_number + second_number
 
 
 state = True
 while state:
-    last_element = input("Введите число, до которого нужно вывести последовательность чисел Фибоначчи: ")
-    if last_element.isdigit() and int(last_element) > 0:
-        last_element = int(last_element)
+    input_count = input("Введите количество чисел последовательности Фибоначчи: ")
+    if input_count.isdigit() and int(input_count) > 0:
+        input_count = int(input_count)
         state = False
     else:
         print("Неправильный ввод, попробуйте ещё раз!")
 
-for number in fibonacci(last_element):
+for number in fibonacci(input_count):
     print(number)
