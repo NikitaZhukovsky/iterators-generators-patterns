@@ -16,7 +16,12 @@ class PizzaBuilder:
         self.pizza = Pizza()
 
     def set_size(self, size):
-        self.pizza.size = size
+        valid_sizes = ["маленькая", "средняя", "большая"]
+        lowercase_size = size.lower()
+        if lowercase_size in valid_sizes:
+            self.pizza.size = lowercase_size
+        else:
+            raise ValueError("Неправильный размер пиццы")
         return self
 
     def add_cheese(self):
